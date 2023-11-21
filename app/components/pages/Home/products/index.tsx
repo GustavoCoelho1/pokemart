@@ -1,0 +1,30 @@
+'use client';
+
+import { BsFire } from 'react-icons/bs';
+import Slider from '@/app/components/design/DragSlider';
+import ProductCard from './ProductCard';
+
+const ProductsSection = () => {
+    return (
+        <section className={`container w-full h-full`}>
+            <div className="w-full h-full bg-white p-12 flex flex-col gap-3">
+                <div className="flex font-baloo font-bold text-3xl text-secondary gap-2">
+                    <BsFire />
+                    <span>Em destaque</span>
+                </div>
+
+                <Slider>
+                    <div className="flex justify-center gap-5">
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                    </div>
+                </Slider>
+            </div>
+        </section>
+    );
+};
+
+export default ProductsSection;

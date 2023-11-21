@@ -1,37 +1,38 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { Quicksand, Baloo_2 } from "next/font/google";
-import Navbar from "./components/navbar";
+import './globals.css';
+
+import type { Metadata } from 'next';
+import { Quicksand, Baloo_2 } from 'next/font/google';
+import Navbar from './components/navbar';
 
 const quicksand = Quicksand({
-  variable: "--font-quicksand",
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
+    variable: '--font-quicksand',
+    subsets: ['latin'],
+    weight: ['300', '400', '700'],
 });
 const baloo = Baloo_2({
-  variable: "--font-baloo",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
+    variable: '--font-baloo',
+    subsets: ['latin'],
+    weight: ['400', '500', '700'],
 });
 
 export const metadata: Metadata = {
-  title: "PokéMart",
-  description: "A maior de loja de itens pokémon!",
+    title: 'PokéMart',
+    description: 'A maior de loja de itens pokémon!',
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="pt-br">
-      <body
-        className={`${quicksand.variable} ${baloo.variable} font-quicksand`}
-      >
-        <Navbar />
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="pt-br">
+            <body
+                className={`${quicksand.variable} ${baloo.variable} font-quicksand`}
+            >
+                <Navbar />
+                {children}
+            </body>
+        </html>
+    );
 }

@@ -1,0 +1,19 @@
+/*react-slick*/
+.slick-dots {
+    bottom: 25px;
+}
+
+.slick-prev {
+    z-index: 10;
+    left: 25px;
+}
+
+.slick-next {
+    z-index: 10;
+    right: 25px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    opacity: 1;
+}
