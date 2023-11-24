@@ -14,11 +14,10 @@ export interface SlideProps {
 
 interface Props {
     slides: Array<SlideProps>;
+    rounded: boolean;
 }
 
-const HeroSlider: React.FC<Props> = ({ slides }) => {
-    const { setBgColor } = useContext(HomeContext);
-
+const HeroSlider: React.FC<Props> = ({ slides, rounded }) => {
     const sliderSettings = {
         autoplay: true,
         dots: true,
@@ -35,22 +34,19 @@ const HeroSlider: React.FC<Props> = ({ slides }) => {
                 },
             },
         ],
-        afterChange: (idx) => changeBgColor(idx),
     } as Settings;
-
-    const changeBgColor = (idx: number) => {
-        setBgColor(slides[idx].mainColor);
-    };
 
     return (
         <div className="w-full">
             <Slider {...sliderSettings}>
                 {slides.map((slide) => (
-                    <div className="h-[500px] mt-[5px] w-full">
+                    <div className="h-full mt-[5px] w-full">
                         <img
                             src={slide.imgUrl}
                             alt={slide.imgAlt}
-                            className="w-full h-full object-cover"
+                            className={`w-full h-full object-cover ${
+                                rounded && 'rounded-[2rem]'
+                            }`}
                         />
                     </div>
                 ))}

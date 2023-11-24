@@ -6,8 +6,8 @@ import ProductCard from './ProductCard';
 
 const ProductsSection = () => {
     return (
-        <section className={`container w-full h-full`}>
-            <div className="w-full h-full bg-white p-12 flex flex-col gap-3">
+        <section className="container w-full h-full bg-primary">
+            <div className="w-full pt-[150px] h-full bg-white p-12 flex flex-col gap-3">
                 <div className="flex font-baloo font-bold text-3xl text-secondary gap-2">
                     <BsFire />
                     <span>Em destaque</span>
