@@ -8,7 +8,7 @@ import HomeContext from './context/HomeContext';
 export default function Home() {
     return (
         <main
-            className={`flex bg-white min-h-screen flex-col items-center transition ease-in duration-300`}
+            className={`flex gap-40 bg-white min-h-screen flex-col items-center transition ease-in duration-300`}
         >
             <HomeBannerSection />
             <ProductsSection />

@@ -12,7 +12,7 @@ const quicksand = Quicksand({
 const baloo = Baloo_2({
     variable: '--font-baloo',
     subsets: ['latin'],
-    weight: ['400', '500', '700'],
+    weight: ['400', '600', '700'],
 });
 
 export const metadata: Metadata = {

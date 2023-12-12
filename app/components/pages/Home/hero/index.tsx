@@ -29,7 +29,7 @@ const HeroSection = () => {
             className="relative h-[400px] pt-10 bg-primary  max-w-screen w-full flex flex-col items-center gap-10"
         >
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary to-transparent h-[60%]" />
-            <div className="absolute bottom-[-200px] left-[-100px] rounded-full bg-white h-[400px] w-[400px]" />
+            <div className="absolute bottom-0 left-[-100px] rounded-tr-full tl-full bg-white h-[200px] w-[350px]" />
             <img
                 style={{ transform: 'scaleX(-1)' }}
                 className="absolute left-[-50px] bottom-[0px] h-[300px] w-fit"
@@ -73,7 +73,7 @@ const HeroSection = () => {
                 </div>
             </div>*/}
 
-            <div className="absolute bottom-[-40%] flex items-center w-[50%] container overflow-hidden">
+            <div className="absolute bottom-[-25%] flex items-center w-[50%] container overflow-hidden">
                 <HeroSlider rounded={true} slides={slides} />
             </div>
         </section>
