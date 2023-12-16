@@ -1,9 +1,13 @@
-import ProductReviews from '@/components/design/ProductReviews';
+'use client';
+
+import { useState } from 'react';
 import OpenReviewsButton from './OpenReviewsButton';
+import { CiDiscount1 } from 'react-icons/ci';
 
 const MainProductSection = () => {
+    const [selectedOptions, setSelectedOptions] = useState([]);
     return (
-        <section className="flex w-full justify-center gap-32 container">
+        <section className="flex w-full justify-center gap-32 container bg-main">
             <div className="flex flex-col gap-5">
                 <div className="bg-gray-400 rounded-3xl h-[500px] min-w-[600px]" />
                 <div className="flex justify-between">
@@ -20,7 +24,7 @@ const MainProductSection = () => {
                     </span>
                     <div className="flex items-center gap-10">
                         <OpenReviewsButton
-                            onClick={() => showReviews()}
+                            product={{ rating: [{ stars: 5 }] }}
                             ratingAvarage={5}
                             ratingAmount={1}
                         />
@@ -32,7 +36,7 @@ const MainProductSection = () => {
                     </div>
                 </div>
 
-                <span className="text-gray text-lg">
+                <span className="text-primary text-lg">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Provident ipsa maiores fuga eligendi sequi! Harum laudantium
                     eum fugiat molestias, voluptates commodi odit vero
@@ -40,40 +44,40 @@ const MainProductSection = () => {
                     voluptatem.
                 </span>
 
-                <div className="flex flex-col gap-5">
-                    <div className="flex relative w-fit">
-                        <span className="text-xl font-bold">Tamanho</span>
-                        <div className="absolute h-[4px] bottom-[-7px] right-6 left-1 rounded-3xl bg-black" />
-                    </div>
-                    <div className="flex gap-3">
-                        <div className="flex items-center justify-center w-14 h-14 rounded-full border-2 text-lg font-bold">
-                            P
-                        </div>
-                        <div className="flex items-center justify-center w-14 h-14 rounded-full border-2 text-lg font-bold">
-                            M
-                        </div>
-                        <div className="flex items-center justify-center w-14 h-14 rounded-full border-2 text-lg font-bold">
-                            G
-                        </div>
-                    </div>
-                </div>
+                <ProductOptions
+                    selectedOptions={selectedOptions}
+                    setSelectedOptions={setSelectedOptions}
+                    options={{
+                        options: [
+                            {
+                                title: 'Tamanho',
+                                options: ['P', 'M', 'G'],
+                            },
+                            {
+                                title: 'Cor',
+                                options: ['Preta', 'Branca', 'Azul'],
+                            },
+                        ],
+                        availableOptions: [['G', 'Preta'], ['M, Branca']],
+                    }}
+                />
 
                 <div className="flex flex-col">
-                    <div className="flex gap-2">
-                        <div>O</div>
-                        <span className="text-xl font-bold text-red-600">
+                    <div className="flex gap-2 text-highlightA">
+                        <CiDiscount1 className="text-xl" />
+                        <span className="text-xl font-bold">
                             35% de desconto!
                         </span>
                     </div>
                     <div className="flex gap-2">
-                        <span className="text-[60px] leading-[6rem] font-baloo font-bold text-red-600">
+                        <span className="text-[60px] leading-[6rem] font-baloo font-bold text-highlightA">
                             R$ 89.90
                         </span>
                         <span className="flex items-center justify-center relative">
-                            <span className="font-baloo font-semibold text-2xl text-gray-400">
+                            <span className="font-baloo font-semibold text-2xl text-primary">
                                 R$ 119.90
                             </span>
-                            <div className="absolute rounded-2xl bg-gray-400 right-[-2px] left-[-2px] h-[3px]" />
+                            <div className="absolute rounded-2xl bg-primary right-[-2px] left-[-2px] h-[3px]" />
                         </span>
                     </div>
                 </div>

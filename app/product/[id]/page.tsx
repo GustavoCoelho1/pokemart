@@ -1,5 +1,5 @@
-import ProductsSection from '@/app/components/pages/Home/products';
-import MainProductSection from '@/app/components/pages/Product/mainProduct';
+import ProductsSection from '@/components/pages/Home/products';
+import MainProductSection from '@/components/pages/Product/mainProduct';
 
 const Product = () => {
     return (

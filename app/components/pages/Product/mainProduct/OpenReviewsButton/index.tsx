@@ -1,29 +1,46 @@
+'use client';
+
 import StartRating from '@/components/design/ProductReviews/StarRating';
+import ProductReviews from '@/components/design/ProductReviews';
+import { useState } from 'react';
 
 interface Props {
-    onClick: () => void;
+    product: {
+        rating: [{ stars: number }];
+    };
     ratingAvarage: number;
     ratingAmount: number;
 }
 
 const OpenReviewsButton: React.FC<Props> = ({
-    onClick,
+    product,
     ratingAmount,
     ratingAvarage,
 }) => {
+    const [visible, setVisible] = useState(false);
+
     return (
-        <button
-            onClick={() => onClick()}
-            className="flex items-center justify-center"
-            title={ratingAvarage.toString()}
-        >
-            <StartRating
-                color="text-yellow-600"
-                size={'text-xl'}
-                stars={ratingAvarage}
+        <>
+            <button
+                onClick={() => setVisible(true)}
+                className="flex items-center justify-center"
+                title={ratingAvarage.toString()}
+            >
+                <StartRating
+                    color="text-highlightB"
+                    size={'text-xl'}
+                    stars={ratingAvarage}
+                />
+                <span className="text-highlightB">({ratingAmount})</span>
+            </button>
+
+            <ProductReviews
+                product={product}
+                avarage={ratingAvarage}
+                visible={visible}
+                setVisible={setVisible}
             />
-            <span className="text-yellow-400">({ratingAmount})</span>
-        </button>
+        </>
     );
 };
 

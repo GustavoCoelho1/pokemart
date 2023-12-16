@@ -1,5 +1,4 @@
-import HeroSlider from '@/app/components/design/HeroSlider';
-import { SlideProps } from '@/app/components/design/HeroSlider';
+import HeroSlider, { SlideProps } from '@/components/design/HeroSlider';
 
 const slides = [
     {
@@ -26,9 +25,9 @@ const HeroSection = () => {
                 backgroundImage: "url('/images/vector-pokeball-bw.png')",
                 backgroundSize: '1000px',
             }}
-            className="relative h-[400px] pt-10 bg-primary  max-w-screen w-full flex flex-col items-center gap-10"
+            className="relative h-[400px] pt-10 bg-highlightB  max-w-screen w-full flex flex-col items-center gap-10"
         >
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary to-transparent h-[60%]" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-highlightB to-transparent h-[60%]" />
             <div className="absolute bottom-0 left-[-100px] rounded-tr-full tl-full bg-white h-[200px] w-[350px]" />
             <img
                 style={{ transform: 'scaleX(-1)' }}

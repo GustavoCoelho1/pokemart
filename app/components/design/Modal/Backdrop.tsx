@@ -53,7 +53,7 @@ const Backdrop: React.FC<Props> = ({ show, children, onClick }) => {
 
     return (
         <motion.div
-            className={`fixed top-0 left-0 z-50 flex h-screen w-screen cursor-default justify-center bg-black/40 blur-lg ${
+            className={`fixed top-0 left-0 z-50 flex h-screen w-screen cursor-default justify-center bg-black/60 backdrop-blur-md ${
                 childHeight > winHeight
                     ? 'items-start overflow-y-scroll py-4'
                     : 'items-center'

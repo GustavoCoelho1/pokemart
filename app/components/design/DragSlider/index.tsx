@@ -3,7 +3,7 @@
 import { motion as m } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 
-const Slider = ({ children }) => {
+const DragSlider = ({ children }) => {
     const [sliderWidth, setSliderWidth] = useState(0);
     const slider = useRef<any>();
 
@@ -32,4 +32,4 @@ const Slider = ({ children }) => {
     );
 };
 
-export default Slider;
+export default DragSlider;

@@ -12,9 +12,12 @@ const config: Config = {
         },
         extend: {
             colors: {
-                primary: '#FFCB05', //Amarelo
-                secondary: '#00274C', //Azul
-                tertiary: '#D00000', // Vermelho
+                main: '#FFFFFF', //Branco
+                primary: '#BDB2A2', //Cinza escuro
+                secondary: '#F4F4F4', //Cinza claro
+                highlightA: '#D00000', // Vermelho
+                highlightB: '#FFCB05', // Amarelo
+                highlightC: '#00274C', // Azul
             },
 
             fontFamily: {

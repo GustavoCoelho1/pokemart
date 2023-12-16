@@ -1,10 +1,12 @@
+'use client';
+
 import { motion } from 'framer-motion';
 //import { gql, useQuery } from '@apollo/client';
 //import { iProduto } from 'types/Produto';
 import { BiArrowBack } from 'react-icons/bi';
 import StartRating from './StarRating';
 import RatingPerStar from './RatingPerStar';
-import CommentsList from './CommentsList/';
+//import Comments from './Comments/';
 import { useEffect, useState } from 'react';
 import Modal from '../Modal';
 
