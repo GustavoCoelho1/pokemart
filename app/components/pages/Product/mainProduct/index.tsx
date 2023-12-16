@@ -1,3 +1,6 @@
+import ProductReviews from '@/components/design/ProductReviews';
+import OpenReviewsButton from './OpenReviewsButton';
+
 const MainProductSection = () => {
     return (
         <section className="flex w-full justify-center gap-32 container">
@@ -16,7 +19,12 @@ const MainProductSection = () => {
                         Título
                     </span>
                     <div className="flex items-center gap-10">
-                        <div>Estrelas</div>
+                        <OpenReviewsButton
+                            onClick={() => showReviews()}
+                            ratingAvarage={5}
+                            ratingAmount={1}
+                        />
+
                         <div className="flex gap-5">
                             <span>Like</span>
                             <span>Compartilhar</span>
