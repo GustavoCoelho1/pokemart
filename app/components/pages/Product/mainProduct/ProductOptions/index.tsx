@@ -7,7 +7,7 @@ interface Props {
     selectedOptions: any[];
     setSelectedOptions: (val: any[]) => void;
     options: {
-        options: OptionsProps[];
+        options: Array<OptionsProps>;
         availableOptions: Array<string>[];
     };
 }
@@ -17,5 +17,7 @@ const ProductOptions: React.FC<Props> = ({
     selectedOptions,
     setSelectedOptions,
 }) => {
-    return <div></div>;
+    return <div className="flex flex-col"></div>;
 };
+
+export default ProductOptions;

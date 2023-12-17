@@ -1,6 +1,6 @@
 import { motion, Variants } from 'framer-motion';
 import Backdrop from './Backdrop';
-import { easeOut } from 'animations/myAnimations';
+import { easeOut } from 'lib/animations';
 
 const thisVariants = {
     show: {

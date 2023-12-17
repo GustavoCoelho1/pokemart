@@ -2,7 +2,7 @@
 
 import { BsFire } from 'react-icons/bs';
 
-import ProductCard from './ProductCard';
+import ProductCard from 'components/design/ProductCard';
 import Slider from 'react-slick';
 
 const ProductsSection = () => {
@@ -15,12 +15,14 @@ const ProductsSection = () => {
                 </div>
 
                 <Slider>
-                    <div className="flex justify-center gap-5">
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                    <div>
+                        <div className="flex justify-center gap-5">
+                            <ProductCard />
+                            <ProductCard />
+                            <ProductCard />
+                            <ProductCard />
+                            <ProductCard />
+                        </div>
                     </div>
                 </Slider>
             </div>

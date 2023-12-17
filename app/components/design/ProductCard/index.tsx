@@ -1,5 +1,5 @@
-import ATCButton from './Buttons/ATCButton';
-import FavoriteButton from './Buttons/FavoriteButton';
+import ATCButton from '../ATCButton';
+import FavoriteButton from '../FavoriteButton';
 
 const ProductCard = () => {
     return (
@@ -25,7 +25,11 @@ const ProductCard = () => {
                         </span>
                     </div>
                     <div className="flex items-center self-end gap-1">
-                        <FavoriteButton />
+                        <FavoriteButton
+                            withBorder={true}
+                            color="primary"
+                            clickedColor="highlightA"
+                        />
                         <ATCButton />
                     </div>
                 </div>

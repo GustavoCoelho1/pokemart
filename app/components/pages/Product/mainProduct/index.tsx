@@ -2,10 +2,19 @@
 
 import { useState } from 'react';
 import OpenReviewsButton from './OpenReviewsButton';
+import ProductOptions from './ProductOptions';
+import FavoriteButton from '@/components/design/FavoriteButton';
+
+import { BsShareFill } from 'react-icons/bs';
 import { CiDiscount1 } from 'react-icons/ci';
+import ShareButton from '@/components/design/ShareButton';
+import ATCButton from '@/components/design/ATCButton';
+import BuyButton from './BuyButton';
 
 const MainProductSection = () => {
-    const [selectedOptions, setSelectedOptions] = useState([]);
+    const [selectedOptions, setSelectedOptions] = useState([
+        { title: '', options: [''] },
+    ]);
     return (
         <section className="flex w-full justify-center gap-32 container bg-main">
             <div className="flex flex-col gap-5">
@@ -20,7 +29,7 @@ const MainProductSection = () => {
             <div className="flex flex-col gap-10">
                 <div className="flex flex-col">
                     <span className="font-baloo font-bold text-[60px]">
-                        Título
+                        Touca Pikachu Pokémon
                     </span>
                     <div className="flex items-center gap-10">
                         <OpenReviewsButton
@@ -29,9 +38,13 @@ const MainProductSection = () => {
                             ratingAmount={1}
                         />
 
-                        <div className="flex gap-5">
-                            <span>Like</span>
-                            <span>Compartilhar</span>
+                        <div className="flex text-2xl gap-3">
+                            <FavoriteButton
+                                clickedColor="highlightA"
+                                color="primary"
+                                withBorder={false}
+                            />
+                            <ShareButton color="primary" />
                         </div>
                     </div>
                 </div>
@@ -63,8 +76,8 @@ const MainProductSection = () => {
                 />
 
                 <div className="flex flex-col">
-                    <div className="flex gap-2 text-highlightA">
-                        <CiDiscount1 className="text-xl" />
+                    <div className="flex items-center gap-1 text-highlightA">
+                        <CiDiscount1 className="text-2xl" />
                         <span className="text-xl font-bold">
                             35% de desconto!
                         </span>
@@ -79,6 +92,11 @@ const MainProductSection = () => {
                             </span>
                             <div className="absolute rounded-2xl bg-primary right-[-2px] left-[-2px] h-[3px]" />
                         </span>
+                    </div>
+
+                    <div className="flex gap-4">
+                        <BuyButton />
+                        <ATCButton />
                     </div>
                 </div>
             </div>

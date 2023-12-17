@@ -1,4 +1,4 @@
-import { easeOut } from 'animations/myAnimations';
+import { easeOut } from 'lib/animations';
 import { motion, Variants } from 'framer-motion';
 import useDimensions from 'hooks/useDimensions';
 import { useRef, useState, useEffect } from 'react';
