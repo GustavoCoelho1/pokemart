@@ -10,22 +10,24 @@ import { CiDiscount1 } from 'react-icons/ci';
 import ShareButton from '@/components/design/ShareButton';
 import ATCButton from '@/components/design/ATCButton';
 import BuyButton from './BuyButton';
+import { VariantSelector } from './VariantSelector';
+import ProductGallery from './ProductGallery';
 
 const MainProductSection = () => {
     const [selectedOptions, setSelectedOptions] = useState([
         { title: '', options: [''] },
     ]);
+
+    const imgs = [
+        'https://www.pngall.com/wp-content/uploads/13/Galaxy-S23-Ultra.png',
+        'https://imgs.ponto.com.br/1555396904/1xg.jpg?imwidth=500',
+        'https://www.pngall.com/wp-content/uploads/13/Galaxy-S23-Ultra.png',
+        'https://www.pngall.com/wp-content/uploads/13/Galaxy-S23-Ultra.png',
+        'https://www.pngall.com/wp-content/uploads/13/Galaxy-S23-Ultra.png',
+    ];
     return (
-        <section className="flex w-full justify-center gap-32 container bg-main">
-            <div className="flex flex-col gap-5">
-                <div className="bg-gray-400 rounded-3xl h-[500px] min-w-[600px]" />
-                <div className="flex justify-between">
-                    <div className="bg-gray-400 rounded-3xl h-[140px] min-w-[140px]" />
-                    <div className="bg-gray-400 rounded-3xl h-[140px] min-w-[140px]" />
-                    <div className="bg-gray-400 rounded-3xl h-[140px] min-w-[140px]" />
-                    <div className="bg-gray-400 rounded-3xl h-[140px] min-w-[140px]" />
-                </div>
-            </div>
+        <section className="flex w-full items-center gap-32 container bg-main">
+            <ProductGallery images={imgs} axis="horizontal" maxSize={600} />
             <div className="flex flex-col gap-10">
                 <div className="flex flex-col">
                     <span className="font-baloo font-bold text-[60px]">
@@ -57,22 +59,51 @@ const MainProductSection = () => {
                     voluptatem.
                 </span>
 
-                <ProductOptions
-                    selectedOptions={selectedOptions}
-                    setSelectedOptions={setSelectedOptions}
-                    options={{
-                        options: [
-                            {
-                                title: 'Tamanho',
-                                options: ['P', 'M', 'G'],
-                            },
-                            {
-                                title: 'Cor',
-                                options: ['Preta', 'Branca', 'Azul'],
-                            },
-                        ],
-                        availableOptions: [['G', 'Preta'], ['M, Branca']],
-                    }}
+                <VariantSelector
+                    options={[
+                        {
+                            id: 'tamanho',
+                            name: 'Tamanho',
+                            values: ['P', 'M', 'G'],
+                        },
+                        {
+                            id: 'cor',
+                            name: 'Cor',
+                            values: ['Preta', 'Branca', 'Azul'],
+                        },
+                    ]}
+                    variants={[
+                        {
+                            id: 'tamanhoCor',
+                            availableForSale: true,
+                            price: 8,
+                            title: 'TamanhoCor',
+                            selectedOptions: [
+                                { name: 'cor', value: 'Preta' },
+                                { name: 'tamanho', value: 'M' },
+                            ],
+                        },
+                        {
+                            id: 'tamanhoCor',
+                            availableForSale: true,
+                            price: 8,
+                            title: 'TamanhoCor',
+                            selectedOptions: [
+                                { name: 'cor', value: 'Branca' },
+                                { name: 'tamanho', value: 'M' },
+                            ],
+                        },
+                        {
+                            id: 'tamanhoCor',
+                            availableForSale: true,
+                            price: 8,
+                            title: 'TamanhoCor',
+                            selectedOptions: [
+                                { name: 'cor', value: 'Branca' },
+                                { name: 'tamanho', value: 'G' },
+                            ],
+                        },
+                    ]}
                 />
 
                 <div className="flex flex-col">
@@ -96,7 +127,14 @@ const MainProductSection = () => {
 
                     <div className="flex gap-4">
                         <BuyButton />
-                        <ATCButton />
+                        <div className="w-20 h-20">
+                            <ATCButton
+                                color="highlightA"
+                                fullfilled={false}
+                                rounded={false}
+                                size="2xl"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

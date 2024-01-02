@@ -3,7 +3,7 @@ import FavoriteButton from '../FavoriteButton';
 
 const ProductCard = () => {
     return (
-        <div className="w-[240px] md:w-[300px] min-h-[200px] cursor-pointer overflow-hidden bg-white shadow-md shadow-black/30 rounded-2xl flex flex-col">
+        <div className="w-[240px] md:w-[300px] min-h-[200px] cursor-pointer overflow-hidden bg-white border rounded-2xl flex flex-col">
             <div className="relative min-w-[100px]">
                 <div className="w-full h-[200px] md:h-[250px] bg-gray-200"></div>
                 <div className="absolute h-[20px] bg-gradient-to-t bottom-0 left-0 right-0 from-white to-transparent" />
@@ -30,7 +30,14 @@ const ProductCard = () => {
                             color="primary"
                             clickedColor="highlightA"
                         />
-                        <ATCButton />
+                        <div className="w-[36px] h-[36px]">
+                            <ATCButton
+                                color="highlightA"
+                                fullfilled={true}
+                                rounded={true}
+                                size="0x"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
