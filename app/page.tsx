@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import HomeBannerSection from './components/pages/Home/hero';
 import ProductsSection from './components/pages/Home/products';
-import HomeContext from './context/HomeContext';
 
 export default function Home() {
     return (

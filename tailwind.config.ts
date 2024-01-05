@@ -13,6 +13,7 @@ const config: Config = {
         extend: {
             colors: {
                 main: '#FFFFFF', //Branco
+                light: '#F4F4F4',
                 primary: '#BDB2A2', //Cinza escuro
                 secondary: '#F4F4F4', //Cinza claro
                 highlightA: '#D00000', // Vermelho
