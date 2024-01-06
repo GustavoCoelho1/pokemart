@@ -23,6 +23,7 @@ const config: Config = {
 
             fontFamily: {
                 baloo: ['var(--font-baloo)', 'sans-serif'],
+                poppins: ['var(--font-poppins)', 'sans-serif'],
             },
         },
     },

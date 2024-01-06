@@ -4,8 +4,8 @@ import CartButton from './buttons/CartButton';
 
 const Navbar = () => {
     return (
-        <nav className="fixed z-50 top-0 left-0 w-full h-[80px] flex justify-center bg-white border">
-            <div className="container w-full h-full flex justify-between items-center">
+        <nav className="fixed left-0 top-0 z-50 flex h-[80px] w-full justify-center shadow-sm backdrop-blur-sm">
+            <div className="container flex h-full w-full items-center justify-between">
                 <Image
                     src={'/images/pokemon-logo.png'}
                     alt="PokéMart"
@@ -13,14 +13,14 @@ const Navbar = () => {
                     height={100}
                 />
 
-                <div className="flex items-center w-[400px] h-fit overflow-hidden">
+                <div className="flex h-fit w-[400px] items-center overflow-hidden">
                     {/*Criar elemento*/}
                     <input
                         type="text"
                         placeholder="Pesquisar produtos..."
-                        className="w-full h-[45px] border-t border-b border-l border-primary/50 text-sm text-primary bg-none outline-none px-4 py-3 rounded-l-3xl placeholder:text-primary/50"
+                        className="h-[45px] w-full rounded-l-3xl border-b border-l border-t border-primary/50 bg-none px-4 py-3 text-sm text-primary outline-none placeholder:text-primary/50"
                     />
-                    <button className="w-[30px] border-t border-b border-r border-primary/50 bg-white h-[45px] rounded-r-3xl text-primary/50 hover:text-primary transition ease-out duration-300">
+                    <button className="h-[45px] w-[30px] rounded-r-3xl border-b border-r border-t border-primary/50 bg-white text-primary/50 transition duration-300 ease-out hover:text-primary">
                         <BsSearch />
                     </button>
                 </div>
@@ -29,7 +29,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-5">
                         <button
                             title="Favoritos"
-                            className="flex items-center justify-center border rounded-full hover:scale-110 transition ease-out duration-300 w-[40px] h-[40px]"
+                            className="flex h-[40px] w-[40px] items-center justify-center rounded-full border transition duration-300 ease-out hover:scale-110"
                         >
                             {/*Criar elemento*/}
                             <Image
@@ -44,9 +44,9 @@ const Navbar = () => {
                         <CartButton />
                     </div>
 
-                    <div className="h-[30px] w-[2px] bg-light rounded-xl" />
+                    <div className="h-[30px] w-[2px] rounded-xl bg-light" />
 
-                    <div className="flex bg-light border rounded-full items-center justify-center w-[40px] h-[40px]">
+                    <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full border bg-light">
                         <Image
                             src={'/images/nav-pfp.png'}
                             alt="Foto de perfil"

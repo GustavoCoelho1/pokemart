@@ -1,7 +1,7 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { Quicksand, Baloo_2 } from 'next/font/google';
+import { Quicksand, Baloo_2, Poppins } from 'next/font/google';
 import Navbar from './components/navbar';
 import Cart from './components/cart';
 import { CartContextProvider } from './context/CartContext';
@@ -13,6 +13,12 @@ const quicksand = Quicksand({
 });
 const baloo = Baloo_2({
     variable: '--font-baloo',
+    subsets: ['latin'],
+    weight: ['400', '600', '700'],
+});
+
+const poppins = Poppins({
+    variable: '--font-poppins',
     subsets: ['latin'],
     weight: ['400', '600', '700'],
 });
@@ -30,7 +36,7 @@ export default function RootLayout({
     return (
         <html lang="pt-br">
             <body
-                className={`${quicksand.variable} ${baloo.variable} font-quicksand`}
+                className={`${quicksand.variable} ${baloo.variable} ${poppins.variable} font-quicksand`}
             >
                 <CartContextProvider>
                     <Navbar />
