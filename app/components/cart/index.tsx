@@ -1,10 +1,12 @@
 'use client';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { cookies } from 'next/headers';
+import CartContext from '@/context/CartContext';
+import { FaAnglesRight } from 'react-icons/fa6';
 
 const Cart = () => {
-    const [isVisible, setIsVisible] = useState(true);
+    const { isVisible, setIsVisible } = useContext(CartContext);
 
     return (
         <aside
@@ -16,11 +18,16 @@ const Cart = () => {
                 },
             )}
         >
-            <div className="flex w-full items-center gap-3 flex-col">
-                <span className="relative w-full text-center font-baloo font-bold text-xl text-primary">
-                    Minhas capturas
-                </span>
-                <div className="w-[80%] h-[2px] rounded-xl bg-light" />
+            <div className="flex w-full px-[5%] items-center gap-3 flex-col">
+                <div className="w-full items-center justify-between flex">
+                    <span className="font-baloo font-bold text-xl text-highlightC">
+                        Minhas capturas
+                    </span>
+
+                    <button onClick={() => setIsVisible(false)}>
+                        <FaAnglesRight className="text-highlightC" />
+                    </button>
+                </div>
             </div>
         </aside>
     );

@@ -32,7 +32,11 @@ const thisVariants = {
 } as Variants;
 
 const Backdrop: React.FC<Props> = ({ show, children, onClick }) => {
-    const { height: winHeight } = useDimensions(window);
+    const [winHeight, setWinHeight] = useState(0);
+
+    useEffect(() => {
+        setWinHeight(window.innerHeight);
+    });
 
     const child = useRef<any>();
     const [childHeight, setChildHeight] = useState(0);
@@ -53,7 +57,7 @@ const Backdrop: React.FC<Props> = ({ show, children, onClick }) => {
 
     return (
         <motion.div
-            className={`fixed top-0 left-0 z-50 flex h-screen w-screen cursor-default justify-center bg-black/60 backdrop-blur-md ${
+            className={`fixed top-0 left-0 z-50 flex h-screen w-screen cursor-default justify-center bg-black/20 backdrop-blur-md ${
                 childHeight > winHeight
                     ? 'items-start overflow-y-scroll py-4'
                     : 'items-center'

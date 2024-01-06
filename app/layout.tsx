@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Quicksand, Baloo_2 } from 'next/font/google';
 import Navbar from './components/navbar';
 import Cart from './components/cart';
+import { CartContextProvider } from './context/CartContext';
 
 const quicksand = Quicksand({
     variable: '--font-quicksand',
@@ -31,9 +32,11 @@ export default function RootLayout({
             <body
                 className={`${quicksand.variable} ${baloo.variable} font-quicksand`}
             >
-                <Navbar />
-                <Cart />
-                {children}
+                <CartContextProvider>
+                    <Navbar />
+                    <Cart />
+                    {children}
+                </CartContextProvider>
             </body>
         </html>
     );
