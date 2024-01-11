@@ -19,18 +19,17 @@ const MainProductSection = () => {
     ]);
 
     const imgs = [
-        'https://www.pngall.com/wp-content/uploads/13/Galaxy-S23-Ultra.png',
-        'https://imgs.ponto.com.br/1555396904/1xg.jpg?imwidth=500',
-        'https://www.pngall.com/wp-content/uploads/13/Galaxy-S23-Ultra.png',
-        'https://www.pngall.com/wp-content/uploads/13/Galaxy-S23-Ultra.png',
-        'https://www.pngall.com/wp-content/uploads/13/Galaxy-S23-Ultra.png',
+        '/images/idle-product.png',
+        '/images/idle-product.png',
+        '/images/idle-product.png',
+        '/images/idle-product.png',
     ];
     return (
-        <section className="flex w-full items-center gap-32 container bg-main">
+        <section className="container flex w-full items-center gap-32 bg-main">
             <ProductGallery images={imgs} axis="horizontal" maxSize={600} />
             <div className="flex flex-col gap-10">
                 <div className="flex flex-col">
-                    <span className="font-baloo font-bold text-[60px]">
+                    <span className="font-baloo text-[60px] font-bold">
                         Touca Pikachu Pokémon
                     </span>
                     <div className="flex items-center gap-10">
@@ -40,7 +39,7 @@ const MainProductSection = () => {
                             ratingAmount={1}
                         />
 
-                        <div className="flex text-2xl gap-3">
+                        <div className="flex gap-3 text-2xl">
                             <FavoriteButton
                                 clickedColor="highlightA"
                                 color="primary"
@@ -51,7 +50,7 @@ const MainProductSection = () => {
                     </div>
                 </div>
 
-                <span className="text-primary text-lg">
+                <span className="text-lg text-primary">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Provident ipsa maiores fuga eligendi sequi! Harum laudantium
                     eum fugiat molestias, voluptates commodi odit vero
@@ -114,20 +113,20 @@ const MainProductSection = () => {
                         </span>
                     </div>
                     <div className="flex gap-2">
-                        <span className="text-[60px] leading-[6rem] font-baloo font-bold text-highlightA">
+                        <span className="font-baloo text-[60px] font-bold leading-[6rem] text-highlightA">
                             R$ 89.90
                         </span>
-                        <span className="flex items-center justify-center relative">
-                            <span className="font-baloo font-semibold text-2xl text-primary">
+                        <span className="relative flex items-center justify-center">
+                            <span className="font-baloo text-2xl font-semibold text-primary">
                                 R$ 119.90
                             </span>
-                            <div className="absolute rounded-2xl bg-primary right-[-2px] left-[-2px] h-[3px]" />
+                            <div className="absolute left-[-2px] right-[-2px] h-[3px] rounded-2xl bg-primary" />
                         </span>
                     </div>
 
                     <div className="flex gap-4">
                         <BuyButton />
-                        <div className="w-20 h-20">
+                        <div className="h-20 w-20">
                             <ATCButton
                                 color="highlightA"
                                 fullfilled={false}

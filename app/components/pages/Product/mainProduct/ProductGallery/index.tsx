@@ -41,16 +41,14 @@ const ProductGallery: React.FC<Props> = ({ images, axis, maxSize }) => {
     };
 
     useEffect(() => {
-        console.log(galleryArrowsEnabled ? 'ta ativo' : 'nem ta');
-
         console.log(galleryElement.current?.clientWidth);
     }, [galleryArrowsEnabled]);
 
     return (
         <div className={`flex flex-col gap-5`}>
-            <div className="relative flex items-center justify-center rounded-3xl h-[500px] min-w-[600px] max-w-[600px] overflow-hidden bg-[#F4F4F4]">
+            <div className="relative flex h-[500px] min-w-[600px] max-w-[600px] items-center justify-center overflow-hidden rounded-3xl bg-[#F4F4F4]">
                 <img
-                    className="absolute top-0 left-0 right-0 w-full h-full object-contain"
+                    className="absolute left-0 right-0 top-0 h-full w-full object-contain"
                     src={images[mainImageIdx]}
                     alt=""
                 />
@@ -60,12 +58,12 @@ const ProductGallery: React.FC<Props> = ({ images, axis, maxSize }) => {
             >
                 <div
                     ref={galleryElement}
-                    className="w-full relative flex items-center gap-4 px-[20px]"
+                    className="relative flex w-full items-center gap-4 px-[20px]"
                 >
                     {galleryArrowsEnabled && (
                         <>
                             <button
-                                className="absolute top-0 bottom-0 w-[10px] left-0 text-primary text-lg z-10 opacity-70 hover:opacity-100"
+                                className="absolute bottom-0 left-0 top-0 z-10 w-[10px] text-lg text-primary opacity-70 hover:opacity-100"
                                 onClick={() =>
                                     handlePreviousGalleryLeftArrowClicked()
                                 }
@@ -73,7 +71,7 @@ const ProductGallery: React.FC<Props> = ({ images, axis, maxSize }) => {
                                 <FaAngleLeft />
                             </button>
                             <button
-                                className="absolute top-0 bottom-0 w-[10px] right-0 text-primary text-lg z-10 opacity-70 hover:opacity-100"
+                                className="absolute bottom-0 right-0 top-0 z-10 w-[10px] text-lg text-primary opacity-70 hover:opacity-100"
                                 onClick={() =>
                                     handlePreviousGalleryRightArrowClicked()
                                 }
@@ -85,9 +83,9 @@ const ProductGallery: React.FC<Props> = ({ images, axis, maxSize }) => {
                     {images.map((img, idx) => (
                         <div
                             className={clsx(
-                                'relative bg-[#F4F4F4] rounded-3xl h-[130px] min-w-[130px] overflow-hidden',
+                                'relative h-[130px] min-w-[130px] overflow-hidden rounded-3xl bg-[#F4F4F4]',
                                 {
-                                    'cursor-pointer opacity-70 duration-300 transition ease-out':
+                                    'cursor-pointer opacity-70 transition duration-300 ease-out':
                                         mainImageIdx != idx,
                                 },
                             )}
@@ -95,7 +93,7 @@ const ProductGallery: React.FC<Props> = ({ images, axis, maxSize }) => {
                             key={`photo-${idx}`}
                         >
                             <img
-                                className="absolute left-0 top-0 w-full h-full object-cover"
+                                className="absolute left-0 top-0 h-full w-full object-contain"
                                 src={img}
                                 alt=""
                             />
