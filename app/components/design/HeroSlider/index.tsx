@@ -4,7 +4,6 @@ import './heroSlider.css';
 
 import Slider, { Settings } from 'react-slick';
 import { useContext } from 'react';
-import HomeContext from '@/app/context/HomeContext';
 
 export interface SlideProps {
     imgUrl: string;
@@ -40,7 +39,7 @@ const HeroSlider: React.FC<Props> = ({ slides, rounded }) => {
         <div className="w-full">
             <Slider {...sliderSettings}>
                 {slides.map((slide) => (
-                    <div className="h-full mt-[5px] w-full">
+                    <div key={`${slide.imgUrl}`} className="h-full mt-[5px] w-full">
                         <img
                             src={slide.imgUrl}
                             alt={slide.imgAlt}

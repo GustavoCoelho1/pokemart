@@ -37,9 +37,9 @@ const ProductOptions: React.FC<Props> = ({
 }) => {
     return (
         <div className="flex flex-col gap-4">
-            {options.optionsType.map((type) => {
+            {options.optionsType.map((type, idx) => {
                 return (
-                    <div className="flex flex-col gap-5">
+                    <div key={`${type.title}-${idx}`} className="flex flex-col gap-5">
                         <div className="flex relative w-fit">
                             <span className="text-xl font-bold">
                                 {type.title}
@@ -49,6 +49,7 @@ const ProductOptions: React.FC<Props> = ({
                         <div className="flex gap-3">
                             {type.options.map((typeOption) => (
                                 <button
+                                    key={`${typeOption}-${idx}`}
                                     className={`flex items-center justify-center border-2 border-primary text-primary text-lg font-bold ${
                                         typeOption.length > 1
                                             ? 'rounded-[1.75rem] px-4 py-4'

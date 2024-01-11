@@ -11,7 +11,7 @@ const CartButton = () => {
         <button
             onClick={() => setIsVisible(!isVisible)}
             title="Minhas capturas"
-            className="flex items-center justify-center border rounded-full hover:scale-110 transition ease-out duration-300 w-[40px] h-[40px]"
+            className="flex items-center justify-center rounded-full transition ease-out duration-300 w-[40px] h-[40px] hover:shadow-md hover:translate-y-[-3px]"
         >
             <Image
                 src={'/images/nav-cart.png'}

@@ -9,7 +9,7 @@ const ProductsSection = () => {
     return (
         <section className="container w-full h-full bg-primary">
             <div className="w-full h-full bg-white flex flex-col gap-3">
-                <div className="flex font-baloo font-bold text-3xl text-highlightC gap-2">
+                <div className="flex font-baloo font-bold text-2xl text-highlightC gap-2">
                     <BsFire />
                     <span>Em destaque</span>
                 </div>

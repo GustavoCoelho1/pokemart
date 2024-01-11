@@ -14,13 +14,12 @@ const Navbar = () => {
                 />
 
                 <div className="flex h-fit w-[400px] items-center overflow-hidden">
-                    {/*Criar elemento*/}
                     <input
                         type="text"
                         placeholder="Pesquisar produtos..."
-                        className="h-[45px] w-full rounded-l-3xl border-b border-l border-t border-primary/50 bg-none px-4 py-3 text-sm text-primary outline-none placeholder:text-primary/50"
+                        className="h-[45px] w-full rounded-l-3xl border-b border-l border-t border-light/40 px-4 bg-light/20 py-3 text-sm text-light outline-none placeholder:text-light/40"
                     />
-                    <button className="h-[45px] w-[30px] rounded-r-3xl border-b border-r border-t border-primary/50 bg-white text-primary/50 transition duration-300 ease-out hover:text-primary">
+                    <button className="h-[45px] w-[30px] rounded-r-3xl border-b border-r border-t bg-light/20 border-light/40 text-light/40 transition duration-300 ease-out hover:text-light">
                         <BsSearch />
                     </button>
                 </div>
@@ -29,7 +28,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-5">
                         <button
                             title="Favoritos"
-                            className="flex h-[40px] w-[40px] items-center justify-center rounded-full border transition duration-300 ease-out hover:scale-110"
+                            className="flex h-[40px] w-[40px] items-center justify-center rounded-full transition duration-300 ease-out hover:shadow-md hover:translate-y-[-3px]"
                         >
                             {/*Criar elemento*/}
                             <Image
@@ -44,9 +43,9 @@ const Navbar = () => {
                         <CartButton />
                     </div>
 
-                    <div className="h-[30px] w-[2px] rounded-xl bg-light" />
+                    <div className="h-[30px] w-[2px] rounded-xl bg-light/40" />
 
-                    <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full border bg-light">
+                    <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full border border-light/40">
                         <Image
                             src={'/images/nav-pfp.png'}
                             alt="Foto de perfil"
