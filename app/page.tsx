@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import HeroSection from './components/pages/Home/hero';
 import ProductsSection from './components/pages/Home/products';
 

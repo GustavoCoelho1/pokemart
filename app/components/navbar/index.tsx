@@ -13,22 +13,11 @@ const Navbar = () => {
                     height={100}
                 />
 
-                <div className="flex h-fit w-[400px] items-center overflow-hidden">
-                    <input
-                        type="text"
-                        placeholder="Pesquisar produtos..."
-                        className="h-[45px] w-full rounded-l-3xl border-b border-l border-t border-light/40 px-4 bg-light/20 py-3 text-sm text-light outline-none placeholder:text-light/40"
-                    />
-                    <button className="h-[45px] w-[30px] rounded-r-3xl border-b border-r border-t bg-light/20 border-light/40 text-light/40 transition duration-300 ease-out hover:text-light">
-                        <BsSearch />
-                    </button>
-                </div>
-
                 <div className="flex items-center gap-5">
                     <div className="flex items-center gap-5">
                         <button
                             title="Favoritos"
-                            className="flex h-[40px] w-[40px] items-center justify-center rounded-full transition duration-300 ease-out hover:shadow-md hover:translate-y-[-3px]"
+                            className="flex h-[40px] w-[40px] items-center justify-center rounded-full transition duration-300 ease-out hover:translate-y-[-3px] hover:shadow-md"
                         >
                             {/*Criar elemento*/}
                             <Image
